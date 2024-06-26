@@ -1,7 +1,9 @@
+
+
 <?php $__env->startSection('content'); ?>
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-md-10">
                 <div class="card">
                     <div class="card-header"><?php echo e(__('Vault')); ?></div>
 
@@ -14,10 +16,10 @@
                         <?php endif; ?>
 
                         <!-- Search Form -->
-                        <form method="GET" action="<?php echo e(route('vault.search')); ?>">
+                        <form method="GET" action="<?php echo e(route('vault.search')); ?>" class="mb-4">
                             <div class="form-group row">
-                                <label for="query" class="col-md-4 col-form-label text-md-right"><?php echo e(__('Search')); ?></label>
-                                <div class="col-md-6">
+                                <label for="query" class="col-md-3 col-form-label text-md-right"><?php echo e(__('Search')); ?></label>
+                                <div class="col-md-7">
                                     <input id="query" type="text" class="form-control" name="query" value="<?php echo e(request('query')); ?>" autocomplete="query" autofocus>
                                 </div>
                                 <div class="col-md-2">
@@ -26,6 +28,104 @@
                             </div>
                         </form>
 
+                        <hr>
+
+                        <!-- Add Password Form -->
+                        <h5><?php echo e(__('Add New Password')); ?></h5>
+                        <form method="POST" action="<?php echo e(route('vault.store')); ?>" class="mb-4">
+                            <?php echo csrf_field(); ?>
+                            <div class="form-group row">
+                                <label for="platform" class="col-md-3 col-form-label text-md-right"><?php echo e(__('Platform')); ?></label>
+                                <div class="col-md-7">
+                                    <input id="platform" type="text" class="form-control <?php $__errorArgs = ['platform'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>" name="platform" value="<?php echo e(old('platform')); ?>" required>
+                                    <?php $__errorArgs = ['platform'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                    <span class="invalid-feedback" role="alert">
+                                            <strong><?php echo e($message); ?></strong>
+                                        </span>
+                                    <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="email_username" class="col-md-3 col-form-label text-md-right"><?php echo e(__('Email/Username')); ?></label>
+                                <div class="col-md-7">
+                                    <input id="email_username" type="text" class="form-control <?php $__errorArgs = ['email_username'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>" name="email_username" value="<?php echo e(old('email_username')); ?>" required>
+                                    <?php $__errorArgs = ['email_username'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                    <span class="invalid-feedback" role="alert">
+                                            <strong><?php echo e($message); ?></strong>
+                                        </span>
+                                    <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="password" class="col-md-3 col-form-label text-md-right"><?php echo e(__('Password')); ?></label>
+                                <div class="col-md-7">
+                                    <input id="password" type="text" class="form-control <?php $__errorArgs = ['password'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>" name="password" value="<?php echo e(old('password')); ?>" required>
+                                    <?php $__errorArgs = ['password'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                    <span class="invalid-feedback" role="alert">
+                                            <strong><?php echo e($message); ?></strong>
+                                        </span>
+                                    <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                                </div>
+                            </div>
+
+                            <div class="form-group row mb-0">
+                                <div class="col-md-9 offset-md-3">
+                                    <button type="submit" class="btn btn-primary">
+                                        <?php echo e(__('Add Password')); ?>
+
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+
+                        <hr>
+
+                        <!-- Passwords Table -->
+                        <h5><?php echo e(__('Stored Passwords')); ?></h5>
                         <table class="table">
                             <thead>
                             <tr>

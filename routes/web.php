@@ -37,6 +37,7 @@ Route::middleware('auth')->group(function () {
 
 
 
+
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::get('/profile', [App\Http\Controllers\HomeController::class, 'profile'])->name('profile');
     Route::post('/profile/change', [App\Http\Controllers\HomeController::class, 'changePass'])->name('changePass');

@@ -91,4 +91,3 @@ class PassController extends Controller
         return view('vault.index', compact('passwords'));
     }
 }
-
