@@ -3,25 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\User;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
     public function index()
     {
         return view('home');
@@ -34,14 +20,37 @@ class HomeController extends Controller
 
     public function changePass(Request $request)
     {
-        // Validate the request
-        $request->validate(['password' => 'required|min:6|confirmed']);
-        $user = User::findOrFail(auth()->user()->id);
-        // Check if authenticated user is authorized to change password for the user
-        if ($user->update(['password' => bcrypt($request->input('password'))])) {
-            // Redirect back or show a success message
-            return redirect()->route('users.show', $user->id)->with('success', 'Password changed successfully.');
+        $user = Auth::user();
+
+        $request->validate([
+            'current_password' => 'required',
+            'new_password' => [
+                'required',
+                'min:8',
+                'confirmed',
+                'different:current_password',
+                function($attribute, $value, $fail) use ($user) {
+                    if (Hash::check($value, $user->password)) {
+                        $fail('The new password must be different from the current password.');
+                    }
+                },
+                'regex:/[a-z]/',      // must contain at least one lowercase letter
+                'regex:/[A-Z]/',      // must contain at least one uppercase letter
+                'regex:/[0-9]/',      // must contain at least one digit
+                'regex:/[@$!%*#?&]/'  // must contain a special character
+            ],
+        ], [
+            'new_password.different' => 'The new password must be different from the current password.',
+            'new_password.regex' => 'The new password must contain at least one lowercase letter, one uppercase letter, one digit, and one special character.',
+        ]);
+
+        if (!Hash::check($request->current_password, $user->password)) {
+            return back()->withErrors(['current_password' => 'Current password is incorrect']);
         }
-        return redirect()->route('profile');
+
+        $user->password = Hash::make($request->new_password);
+        $user->save();
+
+        return redirect()->route('profile')->with('success', 'Password changed successfully');
     }
 }

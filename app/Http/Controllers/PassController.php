@@ -2,75 +2,93 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Pass;
+use Illuminate\Http\Request;
 
 class PassController extends Controller
 {
-    //
-      /**
-     * Display a listing of the resource.
-     */
-    public function index()
+    public function index(Request $request)
     {
+        $query = $request->input('query');
 
-        if(auth()->user()){
-            $data['passwords'] = Pass::where('user_id', auth()->user()->id)->get();
+        if ($query) {
+            $passwords = Pass::where('user_id', auth()->user()->id)
+                ->where(function($q) use ($query) {
+                    $q->where('platform', 'LIKE', "%{$query}%")
+                        ->orWhere('email_username', 'LIKE', "%{$query}%")
+                        ->orWhere('password', 'LIKE', "%{$query}%");
+                })
+                ->paginate(10);
+        } else {
+            $passwords = Pass::where('user_id', auth()->user()->id)->paginate(10);
         }
-        return view("vault", $data);
+
+        return view('vault.index', compact('passwords'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-       $request->validate([
-            'name' => 'required|string',
-            'email' => 'required|string',
+        $request->validate([
+            'platform' => 'required|string',
+            'email_username' => 'required|string',
             'password' => 'required|string',
         ]);
-        $validatedData = [
+
+        Pass::create([
             'user_id' => auth()->user()->id,
-            'name' => $request->get('name'),
-            'email' => $request->get('email'),
-            'password' => $request->get('password'),
-        ];
-        Pass::create($validatedData);
-        return response()->json(['status' => 201, 'message' => 'Password created successfully!']);
+            'platform' => $request->platform,
+            'email_username' => $request->email_username,
+            'password' => $request->password,
+        ]);
+
+        return redirect()->route('vault.index')->with('success', 'Password created successfully!');
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request)
+    public function edit($id)
+    {
+        $password = Pass::findOrFail($id);
+        return view('vault.edit', compact('password'));
+    }
+
+    public function update(Request $request, $id)
     {
         $request->validate([
-            'name' => 'required|string',
-            'email' => 'required|string',
+            'platform' => 'required|string',
+            'email_username' => 'required|string',
             'password' => 'required|string',
         ]);
-        $validatedData = [
-            'user_id' => auth()->user()->id,
-            'name' => $request->get('name'),
-            'email' => $request->get('email'),
-            'password' => $request->get('password'),
-        ];
-        $pass = Pass::findOrFail($request->get('id'));
-        $pass->update($validatedData);
 
-        return redirect()->route('vault.index')->with('success', 'Password updated successfully');
+        $password = Pass::findOrFail($id);
+        $password->update([
+            'platform' => $request->platform,
+            'email_username' => $request->email_username,
+            'password' => $request->password,
+        ]);
+
+        return redirect()->route('vault.index')->with('success', 'Password updated successfully!');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy($id)
     {
-        $pass = Pass::findOrFail($id);
-        $pass->forceDelete();
-        // dd($pass);
-        return redirect()->route('vault.index')->with('success', 'Order deleted successfully');
+        $password = Pass::findOrFail($id);
+        $password->delete();
+
+        return redirect()->route('vault.index')->with('success', 'Password deleted successfully!');
     }
 
+    public function search(Request $request)
+    {
+        $query = $request->input('query');
+
+        $passwords = Pass::where('user_id', auth()->user()->id)
+            ->where(function($q) use ($query) {
+                $q->where('platform', 'LIKE', "%{$query}%")
+                    ->orWhere('email_username', 'LIKE', "%{$query}%")
+                    ->orWhere('password', 'LIKE', "%{$query}%");
+            })
+            ->paginate(10);
+
+        return view('vault.index', compact('passwords'));
+    }
 }
+

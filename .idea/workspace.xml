@@ -4,7 +4,41 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8136a796-41f1-4ffa-81a1-d445c6d47511" name="Changes" comment="" />
+    <list default="true" id="8136a796-41f1-4ffa-81a1-d445c6d47511" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.phpunit.result.cache" beforeDir="false" afterPath="$PROJECT_DIR$/.phpunit.result.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/ForgotPasswordController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/ForgotPasswordController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/ResetPasswordController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/ResetPasswordController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PassController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PassController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Pass.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Pass.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/UserFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/UserFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/passwords/reset.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/passwords/reset.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profile.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/vault.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/R4hppWwgg3k4AkXoqYRGsQ0dyckYD0g82EBdLhaL" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/gYEGHyfagB6xYIcUtueXEkXvKh8tWbqopfpPxlmZ" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/qoomzeEAt11iDURqTnCW5PLGjNLcspjyCXadNOIP" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/1e02370ec60e52c8bb8620425f7b9aad.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/1e02370ec60e52c8bb8620425f7b9aad.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/25d10de775a25e459ee5e1966007cc79.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/25d10de775a25e459ee5e1966007cc79.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/3ab882a5b0edc87d65da6c0e29d4a57b.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/3ab882a5b0edc87d65da6c0e29d4a57b.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/6c7d1ba4c43017442ce9e38c1271a887.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/6c7d1ba4c43017442ce9e38c1271a887.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/a4887ca647dab31528f76a6381db3f4c.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/a4887ca647dab31528f76a6381db3f4c.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/f587ea842c0dd8175248173c68fb4a04.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/f587ea842c0dd8175248173c68fb4a04.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/fe91b23a061ff7b7160a67610276c5da.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/fe91b23a061ff7b7160a67610276c5da.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/logs/laravel.log" beforeDir="false" afterPath="$PROJECT_DIR$/storage/logs/laravel.log" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,7 +49,7 @@
     <execution />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/PassGuard" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -142,6 +176,9 @@
   &quot;associatedIndex&quot;: 3
 }</component>
   <component name="ProjectId" id="2gb2OcowM9nyqmaVinAZYtvaF7r" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -151,10 +188,17 @@
     "JavaScript Debug.filesystems.php.executor": "Run",
     "PHP Script.app.php.executor": "Run",
     "PHP Script.filesystems.php.executor": "Run",
+    "PHPUnit.PasswordChangeTest.executor": "Run",
+    "PHPUnit.PasswordChangeTest.test_user_can_change_password.executor": "Run",
+    "PHPUnit.UserLoginTest.executor": "Run",
+    "PHPUnit.UserLoginTest.test_user_can_login_with_username.executor": "Run",
+    "PHPUnit.UserRegistrationTest.executor": "Run",
+    "PHPUnit.VaultCrudTest.executor": "Run",
+    "PHPUnit.VaultCrudTest.test_user_can_edit_password_entry.executor": "Run",
     "PHPUnit.phpunit.xml.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "C:/laragon/www/larapass",
     "node.js.detected.package.eslint": "true",
@@ -172,9 +216,34 @@
     ]
   }
 }]]></component>
-  <component name="RunManager" selected="PHP Script.filesystems.php">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\laragon\www\larapass\tests\Feature\tests\Feature" />
+    </key>
+  </component>
+  <component name="RunManager" selected="PHPUnit.PasswordChangeTest">
     <configuration name="Main" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner configuration_file="$PROJECT_DIR$/phpunit.xml" scope="XML" use_alternative_configuration_file="true" />
+      <method v="2" />
+    </configuration>
+    <configuration name="PasswordChangeTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\PasswordChangeTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/PasswordChangeTest.php" scope="Class" />
+      <method v="2" />
+    </configuration>
+    <configuration name="UserLoginTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\UserLoginTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/UserLoginTest.php" scope="Class" />
+      <method v="2" />
+    </configuration>
+    <configuration name="UserLoginTest.test_user_can_login_with_username" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\UserLoginTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/UserLoginTest.php" method="test_user_can_login_with_username" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="UserRegistrationTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\UserRegistrationTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/UserRegistrationTest.php" scope="Class" />
+      <method v="2" />
+    </configuration>
+    <configuration name="VaultCrudTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\VaultCrudTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/VaultCrudTest.php" scope="Class" />
       <method v="2" />
     </configuration>
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -189,6 +258,15 @@
       </CommandLine>
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="PHPUnit.PasswordChangeTest" />
+        <item itemvalue="PHPUnit.UserLoginTest" />
+        <item itemvalue="PHPUnit.UserRegistrationTest" />
+        <item itemvalue="PHPUnit.VaultCrudTest" />
+        <item itemvalue="PHPUnit.UserLoginTest.test_user_can_login_with_username" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -210,6 +288,7 @@
       <workItem from="1715958449371" duration="27000" />
       <workItem from="1715958477759" duration="4647000" />
       <workItem from="1716129914361" duration="11914000" />
+      <workItem from="1719345058133" duration="13974000" />
     </task>
     <servers />
   </component>

@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Artisan;
 
 Route::get('/', function () {
     $installed = Storage::disk('public')->exists('installed');
-    if(!$installed){
+    if (!$installed) {
         Artisan::call('migrate');
         Storage::disk('public')->put('installed', 'Contents');
     }
@@ -27,12 +27,17 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::put('vault/update', [App\Http\Controllers\PassController::class, 'update'])->name('vault.update')->middleware('auth');;
-Route::get('vault', [App\Http\Controllers\PassController::class, 'index'])->name('vault.index')->middleware('auth');;
-Route::post('vault/store', [App\Http\Controllers\PassController::class, 'store'])->name('vault.store')->middleware('auth');;
-Route::delete('vault/destroy/{id}', [App\Http\Controllers\PassController::class, 'destroy'])->name('vault.destroy')->middleware('auth');;
+Route::middleware('auth')->group(function () {
+    Route::get('vault', [App\Http\Controllers\PassController::class, 'index'])->name('vault.index');
+    Route::post('vault/store', [App\Http\Controllers\PassController::class, 'store'])->name('vault.store');
+    Route::put('vault/update/{id}', [App\Http\Controllers\PassController::class, 'update'])->name('vault.update');
+    Route::delete('vault/destroy/{id}', [App\Http\Controllers\PassController::class, 'destroy'])->name('vault.destroy');
+    Route::get('vault/search', [App\Http\Controllers\PassController::class, 'search'])->name('vault.search');
+    Route::get('vault/edit/{id}', [App\Http\Controllers\PassController::class, 'edit'])->name('vault.edit');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('auth');
-Route::get('/profile', [App\Http\Controllers\HomeController::class, 'profile'])->name('profile')->middleware('auth');
-Route::post('/profile/change', [App\Http\Controllers\HomeController::class, 'changePass'])->name('changePass')->middleware('auth');
 
+
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::get('/profile', [App\Http\Controllers\HomeController::class, 'profile'])->name('profile');
+    Route::post('/profile/change', [App\Http\Controllers\HomeController::class, 'changePass'])->name('changePass');
+});

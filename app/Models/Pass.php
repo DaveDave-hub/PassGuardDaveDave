@@ -4,7 +4,6 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\Schema;
 
 class Pass extends Model
 {
@@ -12,13 +11,12 @@ class Pass extends Model
     protected $table = 'passes';
     protected $fillable = [
         'user_id',
-        'name',
-        'email',
+        'platform',
+        'email_username',
         'password',
     ];
     public function user()
     {
         return $this->belongsTo(User::class, 'user_id');
     }
-
 }
